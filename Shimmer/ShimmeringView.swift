@@ -119,6 +119,13 @@ final public class ShimmeringView: UIView {
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
+    
+    public func stopShimmering() {
+        
+        if let shimmerLayer = layer as? ShimmeringLayer {
+            shimmerLayer.stopShimmering()
+        }
+    }
 
     private var shimmerLayer: ShimmeringLayer? {
         return (layer as? ShimmeringLayer)

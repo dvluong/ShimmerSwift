@@ -139,6 +139,10 @@ final public class ShimmeringLayer: CALayer {
         CATransaction.setDisableActions(disableActions)
     }
     
+    public func stopShimmering() {
+        self.clearMask()
+    }
+    
     private func createMaskIfNeeded() {
         if isShimmering && maskLayer == nil {
             maskLayer = ShimmeringMaskLayer()
